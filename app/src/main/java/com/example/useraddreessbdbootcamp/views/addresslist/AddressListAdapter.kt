@@ -38,7 +38,7 @@ class AddressListAdapter(private val onItemClick: (Address)-> Unit ): ListAdapte
 
         companion object {
            fun create(parent: ViewGroup, onItemClick: (Address) -> Unit): AddressViewHolder {
-               val view: View = LayoutInflater.from(parent.context).inflate(R.layout.user_item,parent,false)
+               val view: View = LayoutInflater.from(parent.context).inflate(R.layout.address_item,parent,false)
                return AddressViewHolder(view,onItemClick)
            }
         }

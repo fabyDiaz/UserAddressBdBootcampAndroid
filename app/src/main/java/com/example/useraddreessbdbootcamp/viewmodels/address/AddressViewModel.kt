@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.useraddreessbdbootcamp.entities.Address
-import com.example.useraddreessbdbootcamp.entities.User
 import com.example.useraddreessbdbootcamp.repository.MainRepository
 import kotlinx.coroutines.launch
 
@@ -27,7 +26,7 @@ class AddressViewModel(
         }
     }
 
-    fun insertAddress(address: Address, userId: Long )  =
+    fun insertAddress(address: Address, userId: Long, param: (Any) -> Unit)  =
         viewModelScope.launch {
            repository.insertAddresess(address)
            val addressList = repository.getAdresessForUser(userId)
