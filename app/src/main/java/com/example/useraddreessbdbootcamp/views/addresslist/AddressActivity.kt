@@ -41,6 +41,7 @@ class AddressActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        viewModelAddress.getAddressForUser(userId)
         viewModelAddress.usersLV.observe(this) { addressList ->
             addressList?.let {
                 adapter.submitList(it)

@@ -27,10 +27,15 @@ class AddressListAdapter(private val onItemClick: (Address)-> Unit ): ListAdapte
 
     class AddressViewHolder(itemView: View, private val onItemClick: (Address) -> Unit): RecyclerView.ViewHolder(itemView){
 
-        private val userNameItemView: TextView = itemView.findViewById(R.id.txtName)
+        private val calleItemView: TextView = itemView.findViewById(R.id.txtCalle)
+        private val numeroItemView: TextView = itemView.findViewById(R.id.txtNumero)
+        private val ciudadItemView: TextView = itemView.findViewById(R.id.txtCiudad)
 
         fun bind(address: Address){
-           // userNameItemView.text = address
+            calleItemView.text = address.street
+            numeroItemView.text = address.number.toString()
+            ciudadItemView.text = address.city
+
             itemView.setOnClickListener {
                 onItemClick(address)
             }
